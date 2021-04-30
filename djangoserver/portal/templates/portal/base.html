@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+{%  load staticfiles  %}
+<html>
+<head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"/>
+
+  <!-- Compiled and minified JavaScript -->
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'portal/newstyle.css' %}"/>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+</head>
+<body>
+  <header>
+
+        <nav class="top-nav">
+
+
+          <div class="container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+              <i class="large material-icons left">menu</i>
+            </a>
+            <div class="nav-wrapper valign-wrapper">
+              <a class="page-title ">
+                <h2 class="center-align">
+                </h2>
+              </a>
+              {% load static %}
+              <img src="{% static "portal/logo3.jpg" %}" width="100" height="100" alt="My image"/>
+              <!--<img src="static/portal/logo2.png" width="100" height="150">-->
+<h1>MINE YOUR MIND</h1>
+
+          </div>
+        </div>
+        </nav>
+        <!-- <div class="container">
+
+        </div> -->
+        <ul id="nav-mobile" class="side-nav fixed">
+        <h3>
+          {% block title %}
+        {% endblock %}
+        </h3>
+          <li class="menu active" id="home"><a href="/">HOME</a></li>
+          <li class="menu" id="quiz1"><a href="/quiz1">QUIZ</a></li>
+          <li class="menu" id="analysis"><a href="/analysis">ANALYSIS</a></li>
+          <li class="menu" id="stories"><a href="/stories">STORIES</a></li>
+
+        </ul>
+  </header>
+
+
+
+
+  <!-- <div class="container"><a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+{% block body %}
+{% endblock %}
+
+<script>
+// var $=jQuery;
+$(document).ready(function() {
+  // idx = window.location.href.split('/')[window.location.href.split('/').length - 2];
+  // if(window.location.href.split('/')[2]==idx){
+  //   return 0;
+  // }
+  $(".menu").removeClass("active");
+  $("#"+idx).addClass("active");
+
+  $('select').material_select();
+
+  $(".button-collapse").sideNav({
+    draggable: true,
+  });
+  // $('.button-collapse').sideNav('show');
+  // // Hide sideNav
+  // $('.button-collapse').sideNav('hide');
+});
+
+
+</script>
+
+
+</body>
+</html>

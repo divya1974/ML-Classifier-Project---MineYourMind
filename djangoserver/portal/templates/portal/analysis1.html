@@ -1,0 +1,141 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}
+ Analysis
+{% endblock %}
+{% block body %}
+
+<main>
+<head>
+
+  <meta charset="utf-8">
+
+  <style>
+  p {
+    width: 400px;
+  }
+
+    /*button:active {
+        background-color:#64b5f6 ;
+        border: none;
+        color: white ;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+}*/
+    .btncls{
+        background-color: #64b5f6 ;
+        border: none;
+        color:white;
+        align: center;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+        box-shadow: 10px 10px 5px #888888;
+        border-radius: 25px;
+    }
+    .w3-card-4{
+      text-align: center;
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<br>
+
+<div class="w3-container">
+
+    <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of people based on different stages of Depression</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis0' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+    <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of male and females who are having depression.</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis2' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+
+    <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of different age groups.</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis3' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+    <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of Students suffering from depression.</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis4' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+     <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of male and females as per their relationship status.</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis5' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+    <div class="w3-card-4" style="height: 100px;">
+        <div class="w3-container w3-center">
+                <button class="btncls">Analysis of people according to their occupation.</button>
+                <p hidden>
+                 <iframe src="{% url 'analysis6' %} "width="900" height="500">
+                      <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </p>
+        </div>
+    </div>
+
+
+</div>
+<script>
+var idx="analysis";
+$(".btncls").click(function() {
+  $(this).next().slideToggle( "fast" );
+});
+</script>
+
+
+
+
+</body>
+
+</main>
+{% endblock %}

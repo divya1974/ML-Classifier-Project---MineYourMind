@@ -1,0 +1,117 @@
+{% extends 'portal/base.html' %}
+{% block title %}
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript">
+     function setreadonly()
+     {
+      //to add js on page loading
+     }
+   </script>
+      Answer a few Questions
+    <style type="text/css">
+
+      input{
+        color:rgb(0,0,0);
+        font-size: 20px;
+
+      }
+
+.form{
+  position: relative;
+}
+
+.container1 {
+  position: absolute;
+  text-align: center;
+  /*border: 3px solid #333;*/
+  width: 600px;
+  height:2000px;
+  margin-left: 180px;
+}
+.caret {
+    background-color: #0CB2E9;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.select-wrapper:hover .caret {
+    background-color: #0B83AB;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+      td{
+        color:rgba(60, 101, 131, 0.9);
+        background-color:rgba(208, 212, 222, 0.9)
+        padding-bottom:.5em;
+        padding-top: .5em;
+
+      }
+      label
+      {
+        font-family:"Sans-serif";
+        font-style: italic;
+        font-size: 25px;
+        color:rgba(60, 101, 131, 0.9)
+      }
+}
+}
+
+    </style>
+{% endblock %}
+{% block body %}
+<main>
+<body onload="setreadonly()">
+  <div class="container1">
+<h4 class="center-align">Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h4>
+
+{% for field in form %}
+
+{{ field.error }}
+
+{% endfor %}
+<div class="form">
+<form  action="" method="post">{% csrf_token %}
+<table>
+{{ wizard.management_form }}
+{% if wizard.form.forms %}
+    {{ wizard.form.management_form }}
+    {% for form in wizard.form.forms %}
+        {{ form}}
+    {% endfor %}
+{% else %}
+    {{ wizard.form}}
+{% endif %}
+</table>
+{% if wizard.steps.prev %}
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">"first step"</button>
+<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">"second step"</button>
+{% endif %}
+<button type="submit" class="save btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+</body>
+</main>
+<script type="text/javascript">
+  //$("#id_gender").change(function () {
+   // var selection = $("#id_gender option:selected").text();
+    //alert("you selected" + selection);
+   // if (selection=='Not Applicable')
+  //  {
+   // $("#id_othergender").show();
+    //}
+   // else
+ //   $("#id_othergender").hide();
+
+  });
+
+</script>
+<script>
+  var idx="quiz1";
+</script>
+
+{% endblock %}

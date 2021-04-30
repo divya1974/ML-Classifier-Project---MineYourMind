@@ -1,0 +1,18 @@
+{% extends 'portal/base.html' %}
+
+{% block title %}
+New Story
+{% endblock %}
+
+{% block body %}
+<main>
+
+    <form method="POST" class="story-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Share</button>
+    </form>
+<main>
+<script>
+  var idx="stories";
+  </script>
+{% endblock %}
